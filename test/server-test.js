@@ -17,7 +17,6 @@ describe('Server Tests!', () => {
       done();
     });
   });
-
   it('should accept a name', (done) => {
     request('localhost:5000')
     .get('/maverick')
@@ -27,7 +26,6 @@ describe('Server Tests!', () => {
       done();
     });
   });
-
   it('should do a PUT method', (done) => {
     request('localhost:5000')
     .put('/put')
@@ -47,5 +45,14 @@ describe('Server Tests!', () => {
       expect(res.text).to.eql('I did something\n');
       done();
     })
+  });
+  it('should do a DELETE mehtod', (done) => {
+    request('localhost:5000')
+    .delete('/goose')
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res.text).to.eql('goodbye, goose!\n');
+      done();
+    });
   });
 });

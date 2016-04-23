@@ -26,5 +26,13 @@ module.exports = [
     handler: function(request, reply) {
       reply('I did something\n');
     }
+  },
+  // Delete
+  {
+    method: 'DELETE',
+    path: '/{name}',
+    handler: function(request, reply) {
+      reply("goodbye, " + encodeURIComponent(request.params.name) + '!\n');
+    }
   }
 ];
