@@ -31,8 +31,17 @@
   "bugs": {
     "url": "https://github.com/pnwlady/hapi_app/issues"
   },
-  "homepage": "https://github.com/pnwlady/hapi_app#readme",
+  "homepage": "https://github.com/pnwlady/hapi_rest_app#readme",
+  "depenencies" : {
+    "hapi": "^13.3.0",
+    "mongoose": "^4.4.12"
+  },
   "devDependencies": {
-    "hapi": "^13.3.0"
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
   }
 }
