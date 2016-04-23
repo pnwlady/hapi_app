@@ -16,6 +16,12 @@
     "router"
   ],
   "author": "Heidi Laursen",
+  "contributors": [
+    {
+      "name": "James Norotn",
+      "email": "mrjamesnorton@gmail.com"
+    }
+  ]
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pnwlady/hapi_rest_app/issues"
