@@ -1,1 +1,1 @@
-require(__dirname + '/lib/server.js');
+require(__dirname + '/lib/server');
