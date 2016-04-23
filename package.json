@@ -1,30 +1,35 @@
 {
-  "name": "hapi_rest_app",
+  "name": "hapi_app",
   "version": "1.0.0",
-  "description": "test app with hapi",
-  "main": "server.js",
+  "description": "REST app with Hapi",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pnwlady/hapi_rest_app.git"
+    "url": "git+https://github.com/pnwlady/hapi_app.git"
   },
-  "keywords": [
-    "hapi",
-    "server",
-    "router"
-  ],
-  "author": "Heidi Laursen",
+  "author": {
+    "name": "Heidi Laursen",
+    "email": "heidimlaursen@gmail.com"
+  },
   "contributors": [
     {
-      "name": "James Norotn",
+      "name": "James Norton",
       "email": "mrjamesnorton@gmail.com"
+    },
+    {
+      "name": "Kristopher Skelton",
+      "email": "kristopher@kmskelton.com"
     }
-  ]
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pnwlady/hapi_rest_app/issues"
+    "url": "https://github.com/pnwlady/hapi_app/issues"
   },
   "homepage": "https://github.com/pnwlady/hapi_rest_app#readme",
   "depenencies" : {
