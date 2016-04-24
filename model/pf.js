@@ -6,4 +6,4 @@ var pfSchema = new mongoose.Schema({
   actor: { type: String }
 });
 
-module.exports = mongoose.model('PF', pfSchema);
+module.exports = mongoose.model('Pf', pfSchema);
