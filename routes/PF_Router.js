@@ -1,38 +1,30 @@
 'use strict'
+var Hapi = require('hapi');
+var server = new Hapi.Server(3000);
 
-// const Hapi = require('hapi');
-
-module.exports = [
-  //Add the route
-  {
+server.route({
     method: 'GET',
-    path: '/hello',
-    handler: function(request, reply) {
-      return reply('hello world\n');
+    path: '/',
+    handler: function (request, reply) {
+        reply('Hello, world!');
     }
-  },
-  // add second route
-  {
+});
+server.route({
+method: 'GET',
+    path: '/test',
+    handler: function (request, reply) {
+        reply('Hello, test world!');
+    }
+});
+
+server.route({
     method: 'GET',
     path: '/{name}',
-    handler: function(request, reply) {
-      reply('Hello, ' + encodeURIComponent(request.params.name) + '!\n');
+    handler: function (request, reply) {
+        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
     }
-  },
-  //put, post
-  {
-    method: ['PUT', 'POST'],
-    path: '/put',
-    handler: function(request, reply) {
-      reply('I did something\n');
-    }
-  },
-  // Delete
-  {
-    method: 'DELETE',
-    path: '/{name}',
-    handler: function(request, reply) {
-      reply("goodbye, " + encodeURIComponent(request.params.name) + '!\n');
-    }
-  }
-];
+});
+
+server.start(function () {
+    console.log('Server running at:', server.info.uri);
+});
