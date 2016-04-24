@@ -3,8 +3,14 @@ var eslint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
 
 var paths = {
-  scripts: [__dirname + '/lib/*.js', __dirname + '/server.js'],
-  test: [__dirname + 'test/server-test.js']
+  scripts: [
+    __dirname + '/lib/**/*.js',
+    __dirname + '/server.js',
+    __dirname + '/routes/**/*.js'
+  ],
+  test: [
+    __dirname + '/test/**/*test.js'
+  ]
 };
 
 gulp.task('lint:test', () => {
