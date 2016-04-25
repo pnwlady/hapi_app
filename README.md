@@ -3,19 +3,19 @@
 This is a single resource app that uses a server side framework (Hapi), Mongoose, MongoDB to enact basic CRUD and REST to GET, PUT, PATCH and DELETE content in a database.
 
 ## Dev-Dependencies
-*Chai
-*Chai-http
-*gulp
-*gulp-eslint
-*gulp-mocha
-*Mocha
+* Chai
+* Chai-http
+* gulp
+* gulp-eslint
+* gulp-mocha
+* Mocha
 
 ## Dependencies
-*Hapi
-*Mongoose
+* Hapi
+* Mongoose
 
-*Httpie*
-*in command line only
+* Httpie*
+* * *in command line only
 
 
 ####Install dependencies
