@@ -7,7 +7,7 @@ const request = chai.request;
 const Pf = require(__dirname + '/../model/pf');
 const port = process.env.PORT = 1234;
 process.env.MONGO_URI = 'mongodb://localhost/pf_test_db';
-require(__dirname + '/../lib/server');
+const Server = require(__dirname + '/../lib/server');
 const route = require(__dirname + '/../routes/PF_router');
 
 describe('Server Tests!', () => {
@@ -36,31 +36,11 @@ describe('Server Tests!', () => {
         done();
       });
     });
-    request('localhost:' + port)
-      .post('/api/put')
-      .send({
-        name: 'Ranger Rick',
-        instrument: 'Racoon',
-        actor: 'mustache-filtered-microbrews'
-      })
-      .end((err, res) => {
-        expect(err).to.eql(null);
-        expect(route.name).to.eql('Ranger Rick');
-        // expect(res.body.instrument).to.eql('Racoon');
-        // expect(res.body.actor).to.eql('mustache-filtered-microbrews');
+        Server.inject({url:'/api/put', method:'POST', payload:{name: 'Ranger Rick'}}, (res)=> {
+          expect(res.payload).to.include('Ranger Rick');
+        })
         done();
-      });
   });
-  // it('should do a POST method', (done) => {
-  //   request('localhost:' + port)
-  //   .put('/put')
-  //   .send('I feel the need')
-  //   .end((err, res) => {
-  //     expect(err).to.eql(null);
-  //     expect(res.text).to.eql('I did something\n');
-  //     done();
-  //   });
-  // });
   // it('should do a DELETE mehtod', (done) => {
   //   request('localhost:' + port)
   //   .delete('/goose')
