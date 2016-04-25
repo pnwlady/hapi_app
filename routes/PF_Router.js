@@ -23,7 +23,7 @@ module.exports = [{
   path: '/api/put',
   handler: function(request, reply) {
     var newPf = new Pf(request.payload);
-    newPf.save((err, data) => {
+    newPf.save((err) => {
       if (err) {
         console.log(err);
         return reply('Error on Post/Put!');
@@ -37,7 +37,7 @@ module.exports = [{
   handler: function(request, reply) {
     console.log(request.params.pfId);
     Pf.findOne({
-      "_id": request.params.pfId
+      '_id': request.params.pfId
     }, (err, member) => {
       if (!err) {
         console.log(member);
@@ -50,11 +50,11 @@ module.exports = [{
           } else {
             return reply('The contract says we can\'t change that!');
           }
-        })
+        });
       } else {
         reply.status(500);
       }
-    })
+    });
   }
 }, {
   method: 'DELETE',
@@ -67,7 +67,7 @@ module.exports = [{
         console.log(err);
         return reply('Error on delete!');
       }
-      reply('Deleted!');
+      reply('You\re outta the family!');
     });
   }
 }];
