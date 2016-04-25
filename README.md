@@ -19,9 +19,10 @@ npm install
 
 ## Setup
 
-###To run Hapi-appi:
+###To run:
 
-### You need to use mongod to run this application. See documentation for installation and use [mongod documentation](https://docs.mongodb.org/manual/reference/program/mongod/)
+ You need to use mongod to run this application. See documentation for installation and use [mongod documentation](https://docs.mongodb.org/manual/reference/program/mongod/)
+
 
 ####In the first terminal activate the mongod daemon to sync with the data directory in the project:
 
@@ -29,7 +30,7 @@ npm install
 mongod --dbpath=./data
 ```
 
-  This starts the mongod deamon and will run in the background.
+  <em>This starts the mongod deamon and will run in the background.</em>
 
 
 
@@ -39,7 +40,7 @@ mongod --dbpath=./data
 node index
 ```
 
-  This starts up the server.
+  <em>This starts up the server.</em>
 
 
 ####In a third terminal run your httpie REST commands to create content for your database:
@@ -48,12 +49,12 @@ node index
 http POST localhost:5000/api/put name=Shirley instrument=violin actor='Karen Scott'
 ```
 
-  This will post a data object to the database created with mongoose.connection
+  <em>This will post a data object to the database created with mongoose.connection.</em>
 
 ```
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/pf_db')
 ```
-  And will add to the name, instrument and actor properties the values assigned.
+  <em>And will add to the name, instrument and actor properties the values assigned.</em>
 
 
 ## Usage
