@@ -1,11 +1,15 @@
+'use strict';
+
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
 
 var paths = {
   scripts: [
-    __dirname + '/lib/**/*.js',
     __dirname + '/server.js',
+    __dirname + '/gulpfile.js',
+    __dirname + '/lib/**/*.js',
+    __dirname + '/model/**/*.js',
     __dirname + '/routes/**/*.js'
   ],
   test: [
@@ -22,7 +26,7 @@ gulp.task('lint:test', () => {
 gulp.task('lint:nontest', () => {
   return gulp.src(paths.scripts)
     .pipe(eslint())
-    .pipe(eslint.format())
+    .pipe(eslint.format());
 });
 
 gulp.task('mocha', () => {
@@ -30,4 +34,6 @@ gulp.task('mocha', () => {
     .pipe(mocha());
 });
 
-gulp.task('default', ['lint:test', 'lint:nontest', 'mocha']);
+gulp.task('default', ['lint:test', 'lint:nontest', 'mocha'], () => {
+  process.exit(0);
+});

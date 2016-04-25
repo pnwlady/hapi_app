@@ -1,6 +1,6 @@
 'use strict';
-const Pf = require(__dirname + '/../model/pf');
 
+const Pf = require(__dirname + '/../model/pf');
 
 module.exports = [{
   method: 'GET',
@@ -45,9 +45,8 @@ module.exports = [{
         }, member, (err) => {
           if (!err) {
             return reply(request.payload.name + ' stays in the family for another season!\n');
-          } else {
-            return reply('The contract says we can\'t change that!');
           }
+            return reply('The contract says we can\'t change that!');
         });
       } else {
         reply.status(500);
