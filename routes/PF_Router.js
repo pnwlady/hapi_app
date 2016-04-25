@@ -35,12 +35,10 @@ module.exports = [{
   method: 'PUT',
   path: '/api/put/{pfId}',
   handler: function(request, reply) {
-    console.log(request.params.pfId);
     Pf.findOne({
       '_id': request.params.pfId
     }, (err, member) => {
       if (!err) {
-        console.log(member);
         member = request.payload;
         Pf.update({
           _id: request.params.pfId
@@ -58,10 +56,10 @@ module.exports = [{
   }
 }, {
   method: 'DELETE',
-  path: '/api/delete/{id}',
+  path: '/api/delete/{pfId}',
   handler: function(request, reply) {
     Pf.remove({
-      _id: request.params.id
+      _id: request.params.pfId
     }, (err) => {
       if (err) {
         console.log(err);
