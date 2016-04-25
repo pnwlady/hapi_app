@@ -4,7 +4,7 @@ This is a single resource app that uses a server side framework (Hapi), Mongoose
 
 ## Dependencies
 For app
-Mongoose, Mongo DB, Hapi, Httpie*
+Mongoose, Mongo DB, Hapi, Httpie*\n
 *in command line only
 
 For testing
