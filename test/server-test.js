@@ -21,15 +21,6 @@ describe('Server Tests!', () => {
         done();
       });
   });
-  // it('should accept a name', (done) => {
-  //   request('localhost:' + port)
-  //   .get('/api/pf')
-  //   .end((err, res) => {
-  //     expect(err).to.eql(null);
-  //     expect(res.text).to.eql('Hello, maverick!\n');
-  //     done();
-  //   });
-  // });
   it('should do a POST method', (done) => {
     after((done) => {
       mongoose.connection.db.dropDatabase(() => {
