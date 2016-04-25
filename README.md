@@ -13,7 +13,7 @@ Mocha, Chai: request, expect, and Chai-http
 
 ####Install dependencies
 ```
-npm Install
+npm install
 ```
 
 
@@ -21,8 +21,9 @@ npm Install
 
 ###To run Hapi-appi:
 
+### You need to use mongod to run this application. See documentation for installation and use [mongod documentation](https://docs.mongodb.org/manual/reference/program/mongod/)
 
-####In the first terminal activate the mongo daemon to sync with the data directory in the project:
+####In the first terminal activate the mongod daemon to sync with the data directory in the project:
 
 ```
 mongod --dbpath=./data
