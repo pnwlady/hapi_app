@@ -12,9 +12,10 @@ Mocha, Chai: request, expect, and Chai-http
 
 
 ## Setup
-To run Hapi-appi:
+###To run Hapi-appi:
 
-In the first terminal activate the mongo daemon to sync with data directory in your project:
+
+####In the first terminal activate the mongo daemon to sync with data directory in your project:
 
 ```
 mongod --dbpath=./data
@@ -22,14 +23,28 @@ mongod --dbpath=./data
 
   This starts the mongod deamon and will run in the background.
 
-In the second terminal activate app through index:
 
-```node index
+####In the second terminal activate app through index:
+
+```
+node index
 ```
 
   This starts up the server.
 
-In a third terminal
+####In a third terminal run your httpie REST commands to create content for your database:
+
+```
+http POST localhost:5000/api/put name=Shirley instrument=violin actor='Karen Scott'
+```
+
+  This will post a data object to the database created with mongoose.connection
+
+```
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/pf_db')
+```
+  And will add to the name, instrument and actor properties the values assigned. 
+
 
 ## Usage
 
