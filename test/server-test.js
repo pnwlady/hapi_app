@@ -36,18 +36,47 @@ describe('Server Tests!', () => {
         done();
       });
     });
-        Server.inject({url:'/api/put', method:'POST', payload:{name: 'Ranger Rick'}}, (res)=> {
-          expect(res.payload).to.include('Ranger Rick');
-        })
-        done();
+    Server.inject({
+      url: '/api/put',
+      method: 'POST',
+      payload: {
+        name: 'Ranger Rick'
+      }
+    }, (res) => {
+      expect(res.payload).to.include('Ranger Rick');
+    })
+    done();
   });
-  // it('should do a DELETE mehtod', (done) => {
-  //   request('localhost:' + port)
-  //   .delete('/goose')
-  //   .end((err, res) => {
-  //     expect(err).to.eql(null);
-  //     expect(res.text).to.eql('goodbye, goose!\n');
-  //     done();
-  //   });
-  // });
+  describe('routes that need to be a Patridge Family member in the DB', () => {
+    beforeEach((done) => {
+      var newPf = new Pf({
+        name: 'testshoe',
+      });
+      newPf.save((err, data) => {
+        if (err) return;
+        this.pf = data;
+        done();
+      });
+    });
+    afterEach((done) => {
+      this.pf.remove((err) => {
+        if (err) return;
+        done();
+      });
+    });
+    after((done) => {
+      mongoose.connection.db.dropDatabase(() => {
+        done();
+      });
+    });
+    it('should do a DELETE method', (done) => {
+      request('localhost:' + port)
+        .delete('/api/delete/' + this.pf._id)
+        .end((err, res) => {
+          expect(err).to.eql(null);
+          expect(res.text).to.eql('You\re outta the family!');
+          done();
+        });
+    });
+  });
 });
