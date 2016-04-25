@@ -65,7 +65,7 @@ module.exports = [{
         console.log(err);
         return reply('Error on delete!');
       }
-      reply('You\re outta the family!');
+      reply('You\'re outta the family!');
     });
   }
 }];
