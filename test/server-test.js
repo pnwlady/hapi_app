@@ -1,3 +1,5 @@
+'use strict';
+
 const chai = require('chai');
 const expect = chai.expect;
 const chaiHttp = require('chai-http');
@@ -8,7 +10,6 @@ const Pf = require(__dirname + '/../model/pf');
 const port = process.env.PORT = 1234;
 process.env.MONGO_URI = 'mongodb://localhost/pf_test_db';
 const Server = require(__dirname + '/../lib/server');
-const route = require(__dirname + '/../routes/PF_router');
 
 describe('Server Tests!', () => {
   it('should accept GET requests to /api/pf', (done) => {
@@ -35,13 +36,13 @@ describe('Server Tests!', () => {
       }
     }, (res) => {
       expect(res.payload).to.include('Ranger Rick');
-    })
+    });
     done();
   });
   describe('routes that need to be a Patridge Family member in the DB', () => {
     beforeEach((done) => {
       var newPf = new Pf({
-        name: 'testshoe',
+        name: 'testshoe'
       });
       newPf.save((err, data) => {
         if (err) return;
@@ -64,7 +65,7 @@ describe('Server Tests!', () => {
   request('localhost:' + port)
     .put('/api/put/' + this.pf._id)
     .send({
-      name: 'sketchers',
+      name: 'sketchers'
     })
     .end((err, res) => {
       expect(err).to.eql(null);
@@ -77,7 +78,7 @@ describe('Server Tests!', () => {
         .delete('/api/delete/' + this.pf._id)
         .end((err, res) => {
           expect(err).to.eql(null);
-          expect(res.text).to.eql('You\re outta the family!');
+          expect(res.text).to.eql('You\'re outta the family!');
           done();
         });
     });
