@@ -79,7 +79,9 @@ Delete family member from database by by finding their specific id and adding to
 http POST localhost:5000/api/delete/{pfId}
 ```
 
-## Usage
+## To Test
 
 ```
+npm test
+gulp
 ```
