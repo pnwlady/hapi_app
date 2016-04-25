@@ -16,8 +16,8 @@ To run Hapi-appi:
 
 In the first terminal activate the mongo daemon to sync with data directory in your project:
 
-```mongod --dbpath=./data
-```
+``` mongod --dbpath=./data
+
 
   This starts the mongod deamon and will run in the background.
 
