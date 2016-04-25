@@ -14,8 +14,7 @@ This is a single resource app that uses a server side framework (Hapi), Mongoose
 * Hapi
 * Mongoose
 
-* Httpie*
-* * *in command line only
+* Httpie - command line only
 
 
 ####Install dependencies
@@ -48,6 +47,7 @@ node index
 ```
 
   <em>This starts up the server.</em>
+  <em>Make note of your port. When you start your server, the message will tell you what the port is.</em>
 
 
 ####In a third terminal run your httpie REST commands to create content for your database:
@@ -73,7 +73,7 @@ http POST localhost:5000/api/pf
 ```
 
 ###DELETE
-Delete family member from database by by finding their specific id and adding to /api/delete/<id>
+Delete family member from database by by finding their unique mongo _id and it adding to /api/delete/<id>
 
 ```
 http POST localhost:5000/api/delete/{pfId}
