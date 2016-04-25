@@ -69,6 +69,18 @@ describe('Server Tests!', () => {
         done();
       });
     });
+    it('should change the family member\'s name a PUT request', (done) => {
+  request('localhost:' + port)
+    .put('/api/put/' + this.pf._id)
+    .send({
+      name: 'sketchers',
+    })
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res.text).to.include('stays in the family for another season!');
+      done();
+    });
+});
     it('should do a DELETE method', (done) => {
       request('localhost:' + port)
         .delete('/api/delete/' + this.pf._id)
